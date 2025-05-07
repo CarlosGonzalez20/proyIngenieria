@@ -1,0 +1,4 @@
+Esta carpeta es para colocar el esquema de cada tabla
+ejemplo_
+* docente.js
+* curso.js
