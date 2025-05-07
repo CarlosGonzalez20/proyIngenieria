@@ -14,6 +14,7 @@ router.use('/horarios', horariosRoutes);
 
 router.get('/', (req, res) => {
   res.send('API Asignaciones funcionando correctamente 🚀');
+  res.send('Agregar en la barra de búsqueda para acceder a/docentes, /cursos, /aulas, /horarios');
 });
 
 export default router;
