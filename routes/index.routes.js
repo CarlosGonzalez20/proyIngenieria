@@ -13,8 +13,16 @@ router.use('/aulas', aulaRoutes);
 router.use('/horarios', horariosRoutes);
 
 router.get('/', (req, res) => {
-  res.send('API Asignaciones funcionando correctamente 🚀');
-  res.send('Agregar en la barra de búsqueda para acceder a/docentes, /cursos, /aulas, /horarios');
+  res.json({
+    message: 'API de Asignaciones funcionando correctamente 🚀',
+    endpoints: {
+      docentes: '/api-horarios/docentes',
+      cursos: '/api-horarios/cursos',
+      aulas: '/api-horarios/aulas',
+      horarios: '/api-horarios/horarios',
+    },
+    instrucciones: 'Agrega cualquiera de los endpoints arriba listados en la URL actual.'
+  });
 });
 
 export default router;
