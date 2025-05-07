@@ -8,6 +8,9 @@ const router = Router();
 
 // Aquí irían las rutas base
 router.use('/docentes', docenteRoutes);
+router.use('/cursos', cursoRoutes);
+router.use('/aulas', aulaRoutes);
+router.use('/horarios', horariosRoutes);
 
 router.get('/', (req, res) => {
   res.send('API Asignaciones funcionando correctamente 🚀');

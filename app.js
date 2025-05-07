@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Rutas principales
-app.use('/api-horarios', routes);
+app.use('/', routes);
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}/api-horarios/`);
