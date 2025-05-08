@@ -19,11 +19,6 @@ pool.getConnection((err, connection) => {
     console.error('❌ Error al conectar con la base de datos:', err.message);
   } else {
     console.log('✅ Conexión a la base de datos MySQL exitosa');
-    console.log('🧪 Variables cargadas:');
-    console.log('DB_HOST:', process.env.DB_HOST);
-    console.log('DB_PORT:', process.env.DB_PORT);
-    console.log('DB_USER:', process.env.DB_USER);
-
     connection.release();
   }
 });
