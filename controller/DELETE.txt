@@ -1,3 +1,0 @@
-esta carpeta sirve para colocar los controladores
-ejemplo: 
-* docenteController.js

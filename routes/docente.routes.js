@@ -1,14 +1,31 @@
 import { Router } from 'express';
-import db from '../config-db/gestion-horarios.js';
+import {
+  getDocentes,
+  postDocente,
+  updateDocente,
+  deleteDocente
+} from '../controller/docente.controller.js';
+
+import { validarDocente } from '../middleware/validarDocente.js';
 
 const router = Router();
 
-// Obtener todos los docentes desde la base de datos
 router.get('/', (req, res) => {
-  db.query('SELECT * FROM docente', (err, results) => {
-    if (err) return res.status(500).json({ error: err.message });
-    res.json(results);
+  res.json({
+    message: '📚 API de Docentes disponible',
+    endpoints: {
+      listar: 'GET /docentes/mostrar-Todos',
+      agregar: 'POST /docentes/agregar',
+      actualizar: 'PUT /docentes/actualizar/:id',
+      eliminar: 'DELETE /docentes/eliminar/:id'
+    },
+    instrucciones: 'Usa los endpoints anteriores para gestionar los docentes. Asegúrate de enviar los datos en formato JSON.'
   });
 });
+
+router.get('/mostrar-Todos', getDocentes);
+router.post('/agregar', validarDocente, postDocente);
+router.put('/actualizar/:id', validarDocente, updateDocente);
+router.delete('/eliminar/:id', deleteDocente);
 
 export default router;
