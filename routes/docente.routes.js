@@ -1,10 +1,14 @@
 import { Router } from 'express';
+import db from '../config-db/gestion-horarios.js';
 
 const router = Router();
 
-// Ejemplo de ruta
+// Obtener todos los docentes desde la base de datos
 router.get('/', (req, res) => {
-  res.send('Listado de docentes');
+  db.query('SELECT * FROM docente', (err, results) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(results);
+  });
 });
 
 export default router;
