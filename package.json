@@ -19,12 +19,6 @@
     "url": "https://github.com/CarlosGonzalez20/proyIngenieria/issues"
   },
   "homepage": "https://github.com/CarlosGonzalez20/proyIngenieria#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^4.21.2",
-    "mysql2": "^3.14.1"
-  },
   "devDependencies": {
     "nodemon": "^2.0.22"
   }
