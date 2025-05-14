@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   res.json({
     message: 'API de Docentes disponible',
     endpoints: {
-      listar: 'GET /cursos/listar/todo',
+      listar: 'GET /cursos/mostrar-Todos',
       agregar: 'POST /cursos/agregar',
       actualizar: 'PUT /cursos/actualizar/:id',
       eliminar: 'DELETE /cursos/eliminar/:id'
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 });
 
 router.post("/agregar", validadrCurso, postCurso);
-router.get("/listar/todo", getCurso);
+router.get("/mostrar-Todos", getCurso);
 router.put("/actualizar/:id", validadrCurso, putCurso);
 router.delete("/eliminar/:id", deleteCurso);
 

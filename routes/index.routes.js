@@ -5,6 +5,7 @@ import aulaRoutes from './aula.routes.js';
 import horariosRoutes from './horario.routes.js';
 import estudianteRoutes from './estudiante.routes.js';
 import curso_estudianteRoutes from './curso-estudiante.routes.js';
+import asignacionRoutes from './asignar.routes.js';
 
 const router = Router();
 
@@ -15,6 +16,7 @@ router.use('/aulas', aulaRoutes);
 router.use('/horarios', horariosRoutes);
 router.use('/estudiantes', estudianteRoutes);
 router.use('/cursos-estudiantes', curso_estudianteRoutes);
+router.use('/asignar', asignacionRoutes);
 
 router.get('/', (req, res) => {
   res.json({
@@ -25,7 +27,8 @@ router.get('/', (req, res) => {
       aulas: '/aulas',
       horarios: '/horarios',
       estudiantes: '/estudiantes',
-      curso_estudianteRoutes: '/cursos-estudiantes'
+      curso_estudianteRoutes: '/cursos-estudiantes',
+      asignacion: '/asignar'
     },
     instrucciones: 'Agrega cualquiera de los endpoints arriba listados en la URL actual.'
   });
