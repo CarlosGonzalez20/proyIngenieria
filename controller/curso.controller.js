@@ -2,11 +2,11 @@ import db from '../config-db/gestion-horarios.js';
 
 // Agregar un nuevo Curso
 export const postCurso = (req, res) => {
-    const {  nombre, cant_estudiante, carrera_nombre } = req.body;
+    const {  nombre, cant_estudiantes, carrera_nombre } = req.body;
 
     db.query(
         'INSERT INTO curso (nombre, cant_estudiantes, carrera_nombre) VALUES (?, ?, ?)',
-        [nombre, cant_estudiante, carrera_nombre] ,
+        [nombre, cant_estudiantes, carrera_nombre] ,
         (error, results) => {
             if (error) return res.status(500).json({error: error.message});
             res.json(results);
@@ -28,11 +28,11 @@ export const getCurso = (req, res) => {
 // Actualizar curso por ID
 export const putCurso = (req, res) => {
     const { id } = req.params;
-    const { nombre, cant_estudiante, carrera_nombre} = req.body;
+    const { nombre, cant_estudiantes, carrera_nombre} = req.body;
 
     db.query(
         'UPDATE curso SET nombre = ?, cant_estudiantes = ?, carrera_nombre = ? WHERE id_curso = ?',
-        [nombre, cant_estudiante, carrera_nombre, id],
+        [nombre, cant_estudiantes, carrera_nombre, id],
         (error, results) => {
             if (error) return res.status(500).json({error: error.message});
             res.json({message: 'Curso actualizado correctamente', results});
